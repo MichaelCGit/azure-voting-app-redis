@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: michaelcgitazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: michaelcgitazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: michaelcgitazurevotingappredis 
+    spec:
+      containers:
+        - name: michaelcgitazurevotingappredis 
+          image: luwarecontainerregistry.azurecr.io/michaelcgitazurevotingappredis
+          ports:
+          - containerPort: 80
